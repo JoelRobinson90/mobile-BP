@@ -12,6 +12,7 @@ VERSION="bp"
 
 ## Commands
 To get started, use the following commands:
+- **Install project**: `yarn install`
 - **Run the project**: `npx expo start`
 - **Run tests**: `yarn test`
 

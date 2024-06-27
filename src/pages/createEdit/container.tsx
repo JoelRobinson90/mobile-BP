@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FC, useMemo, useState } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Text, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 
@@ -47,9 +47,11 @@ export const CreateEditContainer: FC = () => {
 
   const releaseDate = date_release ? revertChangeDateFormat(date_release) : watch('date_release');
 
-  if (releaseDate !== defaultDate.formattedDate && releaseDate.length === 10) {
-    setValue('date_revision', formatDate(releaseDate).formattedNextYearDate);
-  }
+  useEffect(() => {
+    if (releaseDate !== defaultDate.formattedDate && releaseDate.length === 10) {
+      setValue('date_revision', formatDate(releaseDate).formattedNextYearDate);
+    }
+  }, [releaseDate]);
 
   const onSubmit = async (data: BankProductProps) => {
     const valid = id ? false : await bankService.verificationProduct(data.id);
