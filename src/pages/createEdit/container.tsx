@@ -8,7 +8,7 @@ import { Input } from '@/components/Input';
 import { Toast } from '@/components/Toast';
 import { changeDateFormat, revertChangeDateFormat } from '@/helpers/changeDateFormat';
 import { formatDate } from '@/helpers/formatDate';
-import { useRedirect } from '@/hooks/useRedirecxt';
+import { useRedirect } from '@/hooks/useRedirect';
 import { BankProductProps, InfoApiProps } from '@/interfaces';
 import { schema } from '@/pages/createEdit/schema';
 import bankService from '@/services/bankService';
@@ -95,14 +95,14 @@ export const CreateEditContainer: FC = () => {
             <Input
               label="Fecha Liberación"
               name="date_release"
-              placeholder={defaultDate.formattedDate}
+              placeholder="01/01/1990"
               keyboardType="numeric"
               isDate
             />
             <Input
               label="Fecha Revisión"
               name="date_revision"
-              placeholder={defaultDate.formattedNextYearDate}
+              placeholder="01/01/1991"
               keyboardType="numeric"
               editable={false}
             />

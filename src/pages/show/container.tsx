@@ -4,7 +4,7 @@ import { Text, View, Image } from 'react-native';
 import { Actionsheet } from '@/components/Actionsheet';
 import { Button } from '@/components/Button';
 import { Toast } from '@/components/Toast';
-import { useRedirect } from '@/hooks/useRedirecxt';
+import { useRedirect } from '@/hooks/useRedirect';
 import { BankProductProps, InfoApiProps } from '@/interfaces';
 import bankService from '@/services/bankService';
 import { showStyles } from '@/styles';

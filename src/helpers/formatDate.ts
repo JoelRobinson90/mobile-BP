@@ -8,6 +8,10 @@ export const formatDate = (inputDate?: string) => {
     currentDate = new Date();
   }
 
+  if (isNaN(currentDate.getTime())) {
+    currentDate = new Date();
+  }
+
   const day = String(currentDate.getDate()).padStart(2, '0');
   const month = String(currentDate.getMonth() + 1).padStart(2, '0');
   const year = currentDate.getFullYear();

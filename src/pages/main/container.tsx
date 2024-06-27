@@ -5,7 +5,7 @@ import { SafeAreaView, View, FlatList, TextInput, Text } from 'react-native';
 import { Button } from '@/components/Button';
 import { ItemsListBank } from '@/components/ItemsListBank';
 import { searchProducts } from '@/helpers/searchProducts';
-import { useRedirect } from '@/hooks/useRedirecxt';
+import { useRedirect } from '@/hooks/useRedirect';
 import { BankProductProps } from '@/interfaces';
 import bankService from '@/services/bankService';
 import { bankListStyles, inputStyles, mainStyles } from '@/styles';
@@ -51,11 +51,11 @@ export const MainContainer = () => {
           />
           <View
             style={
-              result.length
+              result?.length
                 ? list
                 : { ...list, height: 100, justifyContent: 'center', alignContent: 'center' }
             }>
-            {result.length ? (
+            {result?.length ? (
               <FlatList
                 data={result}
                 ItemSeparatorComponent={() => <View style={separator} />}
